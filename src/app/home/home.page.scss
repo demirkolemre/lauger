@@ -1,0 +1,12 @@
+ion-fab {
+  margin-bottom: 20%;
+}
+ion-segment-button{
+  --indicator-color	:darkslategray;
+  --color:darkslategray;
+  --color-checked	:darkslategray;
+}
+ion-segment-button .segment-button-indicator{
+  width: 65px;
+  margin: auto;
+}

@@ -1,0 +1,61 @@
+
+<ion-content>
+  <ion-toolbar style="--background: transparent; color: lightcoral;margin: 3%;">
+    <ion-title>Rutinler</ion-title>
+  </ion-toolbar>
+
+
+
+
+ <ion-grid>
+  <ion-row >
+
+    <ion-item-sliding  *ngFor="let dev of hotkeys">
+
+      <ion-item-options side="start"  style="    max-height: 90%;
+      margin-top: 2%;">
+        <ion-item-option style="    border-radius: 20px;
+        width: 74px;
+        margin-right: 0.7%;" color="warning" (click)="editdev(dev)">Düzenle</ion-item-option>
+      </ion-item-options>
+
+      <ion-item lines="none" style="min-height: 130px;
+      background: white;
+      border-radius: 24px;
+      margin: 5px;
+      display: flex;
+      font-size: xx-large;
+  ">
+        <ion-label>{{dev.name}}</ion-label>
+        <ion-icon color="danger" style="font-size: xx-large;" name="bulb"></ion-icon>
+      </ion-item>
+
+      <ion-item-options side="end"  style="    max-height: 90%;
+      margin-top: 2%;">
+
+        <ion-item-option style="border-radius: 20px;" color="danger" (click)="deldev(dev)">Sil</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+
+  </ion-row>
+ </ion-grid>
+</ion-content>
+<ion-tab-bar  slot="bottom">
+  <ion-tab-button (click)="homegit()"  >
+    <ion-icon size="large" name="home"></ion-icon>
+  </ion-tab-button>
+
+  <ion-tab-button (click)="tab2git()" >
+    <ion-icon size="large"  name="git-network"></ion-icon>
+  </ion-tab-button>
+
+  <ion-tab-button selected="true" >
+    <ion-icon size="large"  name="flash"></ion-icon>
+  </ion-tab-button>
+
+  <ion-tab-button (click)="profilgit()">
+    <ion-icon size="large"  name="settings"></ion-icon>
+  </ion-tab-button>
+</ion-tab-bar>
+

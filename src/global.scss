@@ -1,0 +1,153 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+
+app-profile{
+  background: white;
+}
+app-rutins{
+  background: white;
+}
+app-home{
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}app-tab2{
+  --background: #1c92d2 !important;  /* fallback for old browsers */
+  --background: -webkit-linear-gradient(to bottom, #f2fcfe, #1c92d2) !important;  /* Chrome 10-25, Safari 5.1-6 */
+  --background: linear-gradient(to bottom, #f2fcfe, #1c92d2) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+:root{
+  background: #dde1e7;
+
+}
+
+
+.swiper-pagination-bullet{
+  width: 5px !important;
+  height: 5px !important;
+  border-radius: 5% !important;
+}
+.devmodal{
+  --height: calc(100% - (var(--ion-safe-area-top) + -250px));
+  --border-radius: 30px;
+  //box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.swiper-pagination-bullet-active{
+ width: 40px !important;
+ height: 5px !important;
+ border-radius: 15% !important;
+}
+.md ion-tab-bar{
+  --background: #0062f6 ;
+--color-selected: white;
+//box-shadow: 0px 0px 16px 10px #3dc2ff66;
+bottom: 20px;
+position: relative;
+border-radius: 20px;
+width: 90%;
+margin: auto;
+margin-left: 5%;
+}
+
+
+.tab-selected{
+  font-size: 15px;
+}
+
+.md ion-toolbar{
+  ion-item{
+
+    margin-top: 2%;
+    position: absolute;
+     z-index: 1111;
+     top: 0;
+     --background: transparent;
+  }
+  ion-title{
+    font-size: xx-large;
+  }
+}
+
+
+.ios ion-toolbar{
+  top: -5px;
+  left: -5px;
+  --background: white;
+  margin-bottom: -10%;
+  svg{
+    height: 148px;
+  }
+
+  ion-button{
+    margin-top: 2%;
+  }
+  ion-item{
+    width: 100%;
+    margin-top: 10%;
+    position: absolute;
+     z-index: 1111;
+     top: 0;
+     --background: transparent;
+  }
+}
+.ios ion-tab-bar{
+
+  --background: #0099ff;
+    --color-selected: white;
+    bottom: 20px;
+    position: relative;
+    border-radius: 20px;
+    width: 90%;
+    margin: auto;
+    margin-left: 3%;
+    ion-tab-button{
+     margin-top: 8%;
+    }
+}
+
+ion-toast.custom-toast {
+  --background: #0ac542;
+  //box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+  --color: white;
+  --border-radius: 20px;
+
+}
+ion-toast.custom-toastt {
+  --background: #383838;
+  //box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+  --color: white;
+  --border-radius: 20px;
+
+}
+ion-toast.custom-toasthata {
+  --background: rgb(143, 0, 0);
+  //box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+  --color: white;
+  --border-radius: 20px;
+
+}

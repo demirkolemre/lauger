@@ -1,0 +1,11 @@
+{
+  "name": "Lauger",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "appId": "io.ionic.starter",
+  "appName": "Lauger",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}

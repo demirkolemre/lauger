@@ -1,0 +1,138 @@
+
+<ion-content [fullscreen]="true" style="    --padding-bottom: 50px;">
+
+
+  <ion-toolbar style="--background: transparent;">
+    <ion-item style="--background: transparent;" lines="none">
+    <ion-title style="color: Black;" size="large" color="primary">Profil</ion-title>
+          <ion-button disabled shape="round" fill="clear" style="--color:transparent;" size="large" slot="end"><ion-icon name="add-circle"></ion-icon></ion-button>
+
+  </ion-item>
+</ion-toolbar>
+
+
+  <ion-card style="     max-width: 900px;
+  box-shadow: none;
+  margin: 10px;
+  background: white;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: transparent;
+  top: 1%;">
+
+<ion-card class="cardavatar">
+  <ion-icon style="    font-size: 10rem;
+  color: #0099ff;
+  border-style: solid;
+    border-radius: 100px;
+    border-color: black;
+  " name="person">
+
+  </ion-icon>
+   <h1 class="name">  {{userProfile?.name}} {{userProfile?.surname}}</h1>
+</ion-card>
+
+
+  <ion-item lines="none" >
+    <ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-left" size="5"> İsim </ion-col>
+          <ion-col class="text-center" size="7" *ngIf="userProfile?.name">
+            {{userProfile?.name}}
+          </ion-col>
+          <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.name">
+            <span>Düzenle </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-label>
+  </ion-item>
+
+  <ion-item lines="none" >
+    <ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-left" size="5"> Soyisim </ion-col>
+          <ion-col class="text-center" size="7" *ngIf="userProfile?.surname">
+            {{userProfile?.surname}}
+          </ion-col>
+          <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.surname">
+            <span>Düzenle </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-label>
+  </ion-item>
+
+  <ion-item lines="none"  >
+    <ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-left" size="5"> Email </ion-col>
+          <ion-col class="text-center" size="7" *ngIf="userProfile?.email">
+            {{userProfile?.email}}
+          </ion-col>
+          <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.email">
+            <span>Düzenle </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-label>
+  </ion-item>
+
+
+<ion-item  lines="none"  style="margin: 4%;">
+  <ion-label slot="start">
+    <ion-icon name="business-outline"></ion-icon>
+    Destek</ion-label>
+    <ion-button slot="end" fill="clear" color="dark" size="large">></ion-button>
+  </ion-item>
+
+<ion-item  lines="none"  style="margin: 4%;">
+  <ion-label slot="start">
+    <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+        Mesaj Merkezi</ion-label>
+  <ion-button slot="end" fill="clear" color="dark" size="large">></ion-button>
+</ion-item>
+
+<ion-item  lines="none"  style="margin: 4%;">
+  <ion-label style="font-size: small;" slot="start">
+    <ion-icon name="help-circle-outline"></ion-icon>
+            SSS & Geribildirim</ion-label>
+  <ion-button slot="end" fill="clear" color="dark" size="large">></ion-button>
+</ion-item>
+
+
+<ion-item lines="none" style="margin: 4%;">
+
+            <ion-button slot="end" fill="clear" (click)="logOut()" color="danger">
+              <ion-label style="margin-top: 7px;">Çıkış Yap</ion-label>
+            </ion-button>
+          </ion-item>
+
+
+
+
+
+
+
+
+
+</ion-card>
+
+
+
+</ion-content>
+
+<ion-tab-bar
+slot="bottom" >
+  <ion-tab-button (click)="homegit()"  >
+    <ion-icon size="large" name="home"></ion-icon>
+  </ion-tab-button>
+
+
+  <ion-tab-button  selected=true >
+    <ion-icon size="large"  name="person"></ion-icon>
+  </ion-tab-button>
+</ion-tab-bar>

@@ -1,0 +1,229 @@
+
+
+
+
+<ion-toolbar style="--background: transparent; color: green;margin: 3%;">
+  <ion-title style="font-size: x-large;">Rutinler & Otomasyonlar</ion-title>
+</ion-toolbar>
+
+<ion-content [fullscreen]="true">
+
+  <ion-segment style="max-width: 90%; margin: auto;" color="danger" mode="ios" value="coklu" (ionChange)="segmentchange($event)">
+    <ion-segment-button value="tarih">Tarih</ion-segment-button>
+    <ion-segment-button value="coklu">Çoklu Seçim</ion-segment-button>
+
+  </ion-segment>
+
+  <div class="segmentdiv"  *ngIf="!segmentvalue">
+
+    <ion-card style="    border-radius: 8px;
+background: aliceblue;
+box-shadow: -1px 4px 5px 5px #b5d2e96e;
+padding-bottom: 5px;
+">
+
+<ion-item lines="none" style="--background: transparent;">
+  <h1 style="    margin-left: 5%;
+  color: #00ff26;">Cihaz Seç
+  </h1>
+</ion-item>
+
+
+  <ion-row style="justify-content: center;">
+    <div id="b"  *ngFor="let cihaz of aradiklarim" class="box2">
+    <ion-item lines="none" style="--background: transparent; margin-bottom: -45%;">
+  </ion-item>
+      <ion-grid >
+        <ion-row>
+          <ion-label
+          style="font-family: sans-serif; font-size: x-large; padding: 10px; color: white;"
+          >{{ cihaz.data.name }}</ion-label
+        >
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-label
+              style=" color: lightcyan; font-family: sans-serif; font-size: xx-small;"
+              >{{ cihaz.key }}</ion-label
+            >
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col >
+            <!--
+            <ion-toggle
+              [enableOnOffLabels]="true"
+              mode="ios"
+              [(ngModel)]="cihaz.value" (ionChange)="bak(cihaz)"
+            ></ion-toggle>-->
+            <ion-checkbox mode="ios" (ionChange)="bak(cihaz,$event)" mode="ios">
+
+            </ion-checkbox>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-row>
+  <ion-row *ngIf="eklenen.length == 1" style="text-align: center; justify-content: center;">En az 2 seçim yapılmalı</ion-row>
+  <ion-row  *ngIf="eklenen?.length > 1">
+    <ion-title>
+      Seçilenler
+    </ion-title>
+    <ion-item>
+      <ion-label>Cihaz Adı</ion-label>
+      <ion-input (ionChange)="cihazadi($event)" placeholder="Cihaz Adı girin"></ion-input>
+    </ion-item>
+
+    <ion-list style="width: 100%;">
+      <ion-item  *ngFor="let item of eklenen">
+        <ion-label>
+         {{item.data.name }}
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-button style="    width: 100%;
+    margin: 0px 5px 0px 5px;" [disabled]="disablekayit" (click)="kayitbut()"> Kayıt Et</ion-button>
+  </ion-row>
+
+
+
+
+  <ion-row class="dayrow">
+    <ion-col>
+      <div class="daysdiv">
+        <ion-row>
+          <ion-label style="margin: auto;">Paz</ion-label>
+        </ion-row>
+        <ion-row>
+          <ion-checkbox style="margin: auto;"></ion-checkbox>
+        </ion-row>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class="daysdiv">
+        <ion-row>
+          <ion-label style="margin: auto;">Sal</ion-label>
+        </ion-row>
+        <ion-row>
+          <ion-checkbox style="margin: auto;"></ion-checkbox>
+        </ion-row>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class="daysdiv">
+        <ion-row>
+          <ion-label style="margin: auto;">Çar</ion-label>
+        </ion-row>
+        <ion-row>
+          <ion-checkbox style="margin: auto;"></ion-checkbox>
+        </ion-row>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class="daysdiv">
+        <ion-row>
+          <ion-label style="margin: auto;">Per</ion-label>
+        </ion-row>
+        <ion-row>
+          <ion-checkbox style="margin: auto;"></ion-checkbox>
+        </ion-row>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class="daysdiv">
+        <ion-row>
+          <ion-label style="margin: auto;">Cum</ion-label>
+        </ion-row>
+        <ion-row>
+          <ion-checkbox style="margin: auto;"></ion-checkbox>
+        </ion-row>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class="daysdiv">
+        <ion-row>
+          <ion-label style="margin: auto;">Cmt</ion-label>
+        </ion-row>
+        <ion-row>
+          <ion-checkbox style="margin: auto;"></ion-checkbox>
+        </ion-row>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class="daysdiv">
+        <ion-row>
+          <ion-label style="margin: auto;">Paz</ion-label>
+        </ion-row>
+        <ion-row>
+          <ion-checkbox style="margin: auto;"></ion-checkbox>
+        </ion-row>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-item>
+      <ion-label>Saat</ion-label>
+      <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+<ion-modal [keepContentsMounted]="true">
+  <ng-template>
+    <ion-datetime style="color: black;" presentation="time" id="datetime"></ion-datetime>
+  </ng-template>
+</ion-modal>
+    </ion-item>
+
+  </ion-row>
+</ion-card>
+  </div>
+
+
+  <div class="segmentdiv"  *ngIf="segmentvalue">
+
+
+      <ion-datetime
+      min="{{minDate}}"
+      (ionChange)="degisimzaman($event)"
+      style="    color: black;
+      margin: auto;
+      margin-top: 5%;
+      border-radius: 20px;
+      box-shadow: 1px 1px 19px 1px lightskyblue;" locale="tr-TR">
+      <span slot="time-label">Saat</span>
+
+    </ion-datetime>
+
+
+
+
+    <ion-card style="margin: 6%; border-radius: 10px;">
+
+      <ion-item>
+        <ion-label>Zamanlayıcı Adı</ion-label>
+        <ion-input (ionChange)="saatadi($event)" placeholder="Zamanlayıcı Adı girin"></ion-input>
+      </ion-item>
+
+      <ion-button [disabled]="disablezaman" expand="block" (click)="kayitzaman()">Kaydet</ion-button>
+    </ion-card>
+  </div>
+</ion-content>
+
+
+  <ion-tab-bar  slot="bottom">
+    <ion-tab-button (click)="homegit()"  >
+      <ion-icon size="large" name="home"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button selected=true  >
+      <ion-icon size="large"  name="git-network"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="rutingit()" >
+      <ion-icon size="large"  name="flash"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="ayargit()">
+      <ion-icon size="large"  name="settings"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+

@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mesajlar</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">Kapat </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment style="background: whitesmoke;
+  max-width: 95%;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;" mode="ios" color="warning" (ionChange)="tipsec($event)" value="mesajlarim">
+    <ion-segment-button value="gönderilen">
+      <ion-label>Gönderilen</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="mesajlarim">
+      <ion-label>Mesajlarım</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+
+
+  <ion-list *ngIf="!loaded">
+      <ion-item>
+          <ion-label>
+        <h3>
+          <ion-skeleton-text [animated]="true" style="width: 80%;"></ion-skeleton-text>
+        </h3>
+        <p>
+          <ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+        </p>
+        <p>
+          <ion-skeleton-text [animated]="true" style="width: 30%;"></ion-skeleton-text>
+        </p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+    <h3>
+      <ion-skeleton-text [animated]="true" style="width: 80%;"></ion-skeleton-text>
+    </h3>
+    <p>
+      <ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+    </p>
+    <p>
+      <ion-skeleton-text [animated]="true" style="width: 30%;"></ion-skeleton-text>
+    </p>
+  </ion-label>
+</ion-item>
+<ion-item>
+  <ion-label>
+<h3>
+  <ion-skeleton-text [animated]="true" style="width: 80%;"></ion-skeleton-text>
+</h3>
+<p>
+  <ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+</p>
+<p>
+  <ion-skeleton-text [animated]="true" style="width: 30%;"></ion-skeleton-text>
+</p>
+</ion-label>
+</ion-item>
+<ion-item>
+  <ion-label>
+<h3>
+  <ion-skeleton-text [animated]="true" style="width: 80%;"></ion-skeleton-text>
+</h3>
+<p>
+  <ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+</p>
+<p>
+  <ion-skeleton-text [animated]="true" style="width: 30%;"></ion-skeleton-text>
+</p>
+</ion-label>
+</ion-item>
+  </ion-list>
+
+
+  <ion-list hidden={{mesajlarim}} >
+    <ion-item (click)="bulbakim(i)" mode="ios" *ngFor="let item of benimolanlar ; let i = index" button>
+      <ion-label>
+        <p>{{item}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list hidden={{gonderilen}} >
+    <ion-item (click)="bulbakim(i)" mode="ios" *ngFor="let item of onunkiler; let i = index" button>
+      <ion-label>
+        <p>{{item}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

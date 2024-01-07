@@ -1,0 +1,129 @@
+<ion-toolbar
+  style="--background: #0062f6;  height: 9%; margin-bottom: -2px;"
+>
+  <ion-item style="width: 100%;" lines="none">
+    <ion-title size="large" color="white"
+      >Lauger</ion-title
+    >
+    <ion-row style="width: 100%; justify-content: right;">
+      <ion-label style="text-align: right;">{{emaili}}</ion-label>
+
+    </ion-row>
+  </ion-item>
+
+</ion-toolbar>
+
+<ion-content [fullscreen]="true">
+
+
+  <ion-segment style="background: #0062f6;" value="default"  (ionChange)="tipsec($event)" value="mesajview">
+    <ion-segment-button value="mesajview">
+      <ion-icon name="chatbox-ellipses-sharp"></ion-icon>
+            <ion-label>Mesajlar</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="userview">
+      <ion-icon name="people-circle-sharp"></ion-icon>
+      <ion-label>Kullanicilar</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+
+
+  <!--
+  <ion-button (click)="savet()">Savet</ion-button>
+  <ion-button (click)="showdata()">showdata</ion-button>
+  <ion-button (click)="getIpAndPort()">ipget</ion-button>
+  <ion-button (click)="makeApiRequest()">apiget</ion-button>
+  -->
+
+
+
+  <div hidden={{mesajview}} >
+    <ion-list>
+      <ion-item *ngFor="let item of benimolanlar" (click)="bulbakimhome(item)">
+        <ion-avatar>
+          <img src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
+          <ion-label style="margin-left: 4%;">{{item.show}}</ion-label>
+        <ion-icon slot="end" name="arrow-forward"></ion-icon>
+        </ion-item>
+    </ion-list>
+  </div>
+
+
+
+
+  <div hidden={{userview}} >
+    <ion-list>
+
+      <!--
+      <ion-item *ngFor="let item of kullanicilar" (click)="bulbakim(item)">
+        <ion-avatar>
+          <img src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
+          <ion-label style="margin-left: 4%;">{{item.name}}  {{item.surname}}</ion-label>
+
+
+          <div>
+            <ion-label>Çevrimiçi</ion-label>
+            <div slot="end" style="background: green; border-radius: 50px;">.</div>
+          </div>
+
+        </ion-item> -->
+
+
+
+        <ion-card  *ngFor="let item of kullanicilar" (click)="bulbakim(item)" color="medium" style="height: 75px;">
+
+
+
+        <ion-grid>
+          <ion-row>
+            <ion-col style="max-width: 75px;  display: grid; align-items: center; justify-content: center; text-align: center;"> <ion-avatar>
+              <img style="width: 50px; height: 50px;" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            </ion-avatar></ion-col>
+            <ion-col style="display: grid;
+            text-align: left;
+            justify-content: left;
+            align-items: center;
+            max-height: 50px;
+            ">{{item.name}}  {{item.surname}}</ion-col>
+            <ion-col style="display: grid;
+            text-align: right;
+            justify-content: right;
+            align-items: center;">
+
+            <div *ngIf="item.isOnline" style="color: green; background: green; width: 10px; height: 10px; border-radius: 50px;"> </div>
+            <div *ngIf="!item.isOnline" style="color: darkgrey; background: darkgrey; width: 10px; height: 10px; border-radius: 50px;"> </div>
+
+          </ion-col>
+
+          </ion-row>
+          <ion-row style="    position: fixed;
+          top: 35%;
+          left: 20%;">
+            <ion-col><p *ngIf="item.isOnline">Çevrimiçi</p> <p *ngIf="!item.isOnline">Dışarıda</p></ion-col>
+          </ion-row>
+        </ion-grid>
+        </ion-card>
+    </ion-list>
+  </div>
+
+
+
+</ion-content>
+
+
+<!--
+<ion-tab-bar slot="bottom">
+  <ion-tab-button selected="true">
+    <ion-icon size="large" name="home"></ion-icon>
+  </ion-tab-button>
+
+
+
+  <ion-tab-button (click)="ayargit()">
+    <ion-icon size="large" name="person"></ion-icon>
+  </ion-tab-button>
+</ion-tab-bar>
+-->

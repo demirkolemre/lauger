@@ -1,0 +1,32 @@
+<form style="background: white;
+border-radius: 20px;" [formGroup]="authForm">
+  <ion-row style="justify-content: center;">
+    <h1 class="color-change-2x-yazi">Hoşgeldiniz</h1>
+  </ion-row>
+
+  <ion-item>
+    <ion-label position="stacked">Email</ion-label>
+    <ion-input formControlName="email" type="email" placeholder="E-mail" [class.invalid]="!authForm.controls['email'].valid &&
+      authForm.controls['email'].touched">
+    </ion-input>
+  </ion-item>
+  <ion-item class="error-message" *ngIf="!authForm.controls['email'].valid &&
+       authForm.controls['email'].touched">
+    <ion-label>Kullanılabilir bir email giriniz.</ion-label>
+  </ion-item>
+
+  <ion-item *ngIf="!isPasswordResetPage">
+    <ion-label position="stacked">Şifre</ion-label>
+    <ion-input formControlName="password" type="password" placeholder="Şifreniz"
+      [class.invalid]="!authForm.controls['password'].valid&& authForm.controls['password'].touched">
+    </ion-input>
+  </ion-item>
+  <ion-item class="error-message" *ngIf="!authForm.controls['password'].valid
+      && authForm.controls['password'].touched && !isPasswordResetPage">
+    <ion-label>Şifre 6 karakterden uzun olmalı.</ion-label>
+  </ion-item>
+
+  <ion-button class="color-change-2x-yazi" shape="round" (click)="submitCredentials(authForm)" expand="block" [disabled]="!authForm.valid">
+    {{ actionButtonText }}
+  </ion-button>
+</form>

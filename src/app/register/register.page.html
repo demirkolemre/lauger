@@ -1,0 +1,85 @@
+
+<ion-content>
+
+    <form style="background: white; border-radius: 20px;" [formGroup]="registerForm">
+  <ion-row style="justify-content: center;">
+    <h1 class="color-change-2x-yazi">Lauger</h1>
+  </ion-row>
+
+  <ion-item>
+    <ion-label position="stacked">isim</ion-label>
+    <ion-input formControlName="name" type="text" placeholder="isim" [(ngModel)]="name" [class.invalid]="!registerForm.controls['name'].valid &&
+      registerForm.controls['name'].touched">
+    </ion-input>
+  </ion-item>
+  <ion-item class="error-message" *ngIf="!registerForm.controls['name'].valid &&
+       registerForm.controls['name'].touched">
+    <ion-label>Kullanılabilir bir isim giriniz.</ion-label>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label position="stacked">soy isim</ion-label>
+    <ion-input formControlName="surname" type="text" placeholder="soyisim" [(ngModel)]="surname" [class.invalid]="!registerForm.controls['surname'].valid &&
+      registerForm.controls['surname'].touched">
+    </ion-input>
+  </ion-item>
+  <ion-item class="error-message" *ngIf="!registerForm.controls['surname'].valid &&
+       registerForm.controls['surname'].touched">
+    <ion-label>Kullanılabilir bir isim giriniz.</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Telefon</ion-label>
+    <ion-input formControlName="number" type="number" placeholder="0533 533 33 33" [(ngModel)]="number" [class.invalid]="!registerForm.controls['number'].valid &&
+      registerForm.controls['number'].touched">
+    </ion-input>
+  </ion-item>
+  <ion-item class="error-message" *ngIf="!registerForm.controls['number'].valid &&
+       registerForm.controls['number'].touched">
+    <ion-label>Kullanılabilir bir isim giriniz.</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Email</ion-label>
+    <ion-input formControlName="email" type="email" placeholder="E-mail" [(ngModel)]="email" [class.invalid]="!registerForm.controls['email'].valid &&
+      registerForm.controls['email'].touched">
+    </ion-input>
+  </ion-item>
+  <ion-item class="error-message" *ngIf="!registerForm.controls['email'].valid &&
+       registerForm.controls['email'].touched">
+    <ion-label>Kullanılabilir bir email giriniz.</ion-label>
+  </ion-item>
+
+
+
+  <ion-item *ngIf="!isPasswordResetPage">
+    <ion-label position="stacked">Şifre</ion-label>
+    <ion-input [(ngModel)]="pass" formControlName="pass" type="password" placeholder="Şifreniz"
+      [class.invalid]="!registerForm.controls['pass'].valid&& registerForm.controls['pass'].touched">
+    </ion-input>
+  </ion-item>
+  <ion-item class="error-message" *ngIf="!registerForm.controls['pass'].valid
+      && registerForm.controls['pass'].touched && !isPasswordResetPage">
+    <ion-label>Şifre 6 karakterden uzun olmalı.</ion-label>
+  </ion-item>
+
+
+
+  <ion-item *ngIf="!isPasswordResetPage">
+    <ion-label position="stacked">Şifre yeniden</ion-label>
+    <ion-input [(ngModel)]="pass2" formControlName="pass2" type="password" placeholder="Şifreniz"
+      [class.invalid]="!registerForm.controls['pass2'].valid&& registerForm.controls['pass2'].touched">
+    </ion-input>
+  </ion-item>
+  <ion-item class="error-message" *ngIf="!registerForm.controls['pass2'].valid
+      && registerForm.controls['pass2'].touched && !isPasswordResetPage">
+    <ion-label>Şifre 6 karakterden uzun olmalı.</ion-label>
+  </ion-item>
+
+  <ion-button class="color-change-2x-yazi" shape="round" (click)="kayitol()" expand="block" [disabled]="!registerForm.valid">
+   Kayıt Oluştur
+  </ion-button>
+</form>
+
+</ion-content>

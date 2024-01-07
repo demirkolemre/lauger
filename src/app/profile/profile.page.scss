@@ -1,0 +1,38 @@
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+ion-content {
+
+  --background: whitesmoke;  /* fallback for old browsers */
+
+}
+
+
+ion-item{
+ --background: transparent;
+}
+
+.cardavatar{
+  align-items: center;
+    text-align: center;
+    --background: transparent;
+    box-shadow: none;
+    border: none;
+}
+ion-col{
+  text-align: center;
+}
+
+.tabbaralt{
+  border-radius: 20px 20px 0px 0px;
+}
+
+
+.name{
+  color: black;
+}

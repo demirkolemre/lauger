@@ -1,0 +1,25 @@
+
+<ion-content >
+<div class="div">
+    <ion-grid>
+      <ion-row style="    margin-right: 25%;
+      margin-left: 5%;">
+        <h1>Lauger</h1>
+      </ion-row>
+        <ion-row style="margin-top: 5%;">
+            <ion-col size="12" size-lg="8" offset-lg="2" size-xl="5" offset-xl="3.5">
+                <app-auth-form #loginForm (formSubmitted)="loginUser($event)" [actionButtonText]="'Giriş'">
+                </app-auth-form>
+            </ion-col>
+            <ion-col size="12" size-lg="8" offset-lg="2" size-xl="5" offset-xl="3.5">
+
+                <ion-button class="button" style="color:gray;" (click)="register()" expand="block" fill="clear">Kayıt Ol</ion-button>
+                <ion-button class="button" style="color: gray;" (click)="sifre()" expand="block" fill="clear">Şifremi Unuttum</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+
+
+

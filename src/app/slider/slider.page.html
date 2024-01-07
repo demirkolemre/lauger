@@ -1,0 +1,40 @@
+ <ion-content fullscreen class="ion-padding" scroll-y="false">
+        <ion-slides pager="true" (ionSlideDidChange)="demo($event)">
+          <ion-slide>
+            <div class="slide">
+              <img src="../../assets/img/1.svg" />
+              <h2>Hoşgeldin</h2>
+              <p>
+                Hayatınızı kolaylaştıran akıllı ev cihazlarımızla tanışın! Evinizin her köşesini kontrol etmek ve enerji verimliliğini artırmak artık çok daha basit.
+              </p>
+            </div>
+          </ion-slide>
+
+          <ion-slide>
+            <img src="../../assets/img/2.svg" />
+            <h2>Nedir SelSmart</h2>
+            <p>
+              Ev güvenliğinizi ön planda tutan akıllı cihazlarımızla huzurlu bir yaşam sizinle. Uzaktan izleme, hareket algılama ve acil durum bildirimleri sayesinde evinizin kontrolü her zaman avucunuzun içinde.
+            </p>
+          </ion-slide>
+
+          <ion-slide>
+            <img src="../../assets/img/3.svg" />
+            <h2>Akıllı Ev, Akıllı Yaşam</h2>
+            <p>
+              Sadece bir dokunuşla evinizi kendiniz için çalışan bir organizmaya dönüştürün. Enerji tasarruflu aydınlatma, otomatik perde kontrolü ve kişisel asistanımızla yaşam kalitenizi yükseltin.
+            </p>
+          </ion-slide>
+
+          <ion-slide>
+            <img src="../../assets/img/4.svg" />
+            <h2>Başlamaya Hazır Mısın?</h2>
+            <ion-item style="    width: 70%;
+            margin: auto;" lines="none">
+              <ion-checkbox (ionChange)="show($event)" slot="start"></ion-checkbox>
+              <ion-label>Bir daha gösterme</ion-label>
+            </ion-item>
+            <ion-button (click)="gec()" fill="clear">Başlayalım <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+          </ion-slide>
+        </ion-slides>
+      </ion-content>

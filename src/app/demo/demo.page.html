@@ -1,0 +1,345 @@
+<ion-content>
+  <h1 style="    z-index: 2222;
+  position: absolute;
+  font-family: sans-serif;
+  font-weight: revert;
+  margin: 20px;
+  color: lightcoral;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #eb455a;
+  text-shadow: 1px 3px 7px white;">SelSmart</h1>
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button color="danger">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <!--
+
+    <div class="box2">
+    <ion-grid>
+      <ion-row>
+        <ion-icon
+          class="aa"
+          style="
+            font-size: xx-large;
+            color: gray;
+            padding: 12px;
+            padding-bottom: 0px;
+          "
+          name="bulb"
+        ></ion-icon
+      ></ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-label style="padding: 0px 0px 13px 13px; font-family: sans-serif"
+            >Air Lamp</ion-label
+          >
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-toggle
+            (ionChange)="bak($event)"
+            [enableOnOffLabels]="true"
+            mode="ios"
+          ></ion-toggle>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="box3">
+    <ion-grid style="padding: 13px">
+      <ion-row>
+        <ion-col><ion-icon name="options"></ion-icon></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-label>Kontrol</ion-label></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-label>Merkezi</ion-label></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+-->
+
+
+
+  <ion-grid >
+    <ion-row>
+      <ion-col>
+
+        <ion-slides  pager="true" style="padding-bottom: 7%; margin-bottom: -7%; margin-top: 5%;">
+          <ion-slide    >
+            <img style="    max-width: 97%;
+            border-radius: 150px 150px 10px 10px;
+            height: 300px;
+            object-fit: inherit;" src="../../assets/img/home.jpg" alt="">
+          </ion-slide>
+
+          <ion-slide   >
+            <img style="    max-width: 97%;
+            border-radius: 150px 150px 10px 10px;
+            height: 300px;
+            object-fit: inherit;" src="../../assets/img/home.jpg" alt="">
+          </ion-slide>
+
+
+          <ion-slide   >
+            <img style="    max-width: 97%;
+            border-radius: 150px 150px 10px 10px;
+            height: 300px;
+            object-fit: inherit;" src="../../assets/img/home.jpg" alt="">
+          </ion-slide>
+        </ion-slides>
+
+
+      </ion-col>
+    </ion-row>
+
+
+
+    <ion-row>
+      <ion-col>
+        <h1 style="font-family: sans-serif; font-size: xx-large; font-weight: bolder;">Hoşgeldiniz</h1>
+        <p style=" font-family: sans-serif; margin-top: -2%;">Smart Systems</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+  <ion-grid style="    left: -6%; margin-top: -10%;
+  position: fixed;
+  right: 4%;">
+    <ion-row style="margin-bottom: -16%;">
+      <ion-col size="4 ">
+        <div class="box2">
+          <ion-grid>
+            <ion-row>
+              <div id="bb" style="border-radius: 20px;
+              width: 7%;
+              height: 30px;
+              margin: 6px 13px 7px 24px;
+              box-shadow: none;
+              ">
+              <ion-icon
+                class="aa"
+                id="bulb"
+                style="
+                  font-size: xx-large;
+                  color: gray;
+                  margin-left: -12px;
+                  margin-top: -1px;
+                "
+                name="bulb"
+              ></ion-icon
+            >
+                </div>
+
+          </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-label
+                  style="padding: 0px 0px 13px 13px; font-family: sans-serif"
+                  >Air Lamp</ion-label
+                >
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-toggle
+                  (ionChange)="bak($event)"
+                  [enableOnOffLabels]="true"
+                  mode="ios"
+                ></ion-toggle>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-col>
+
+      <ion-col size="4">
+        <div class="box2">
+          <ion-grid>
+            <ion-row>
+              <ion-icon
+                class="aa"
+                style="
+                  font-size: xx-large;
+                  color: gray;
+                  padding: 12px;
+                  padding-bottom: 0px;
+                "
+                name="bulb"
+              ></ion-icon
+            ></ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-label
+                  style="padding: 0px 0px 13px 13px; font-family: sans-serif"
+                  >Air Lamp</ion-label
+                >
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col >
+                <ion-toggle
+                  (ionChange)="bak($event)"
+                  [enableOnOffLabels]="true"
+                  mode="ios"
+                ></ion-toggle>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-col>
+
+      <ion-col size="4">
+        <div class="box2">
+          <ion-grid>
+            <ion-row>
+              <ion-icon
+                class="aa"
+                style="
+                  font-size: xx-large;
+                  color: gray;
+                  padding: 12px;
+                  padding-bottom: 0px;
+                "
+                name="bulb"
+              ></ion-icon
+            ></ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-label
+                  style="padding: 0px 0px 13px 13px; font-family: sans-serif"
+                  >Air Lamp</ion-label
+                >
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-toggle
+                  (ionChange)="bak($event)"
+                  [enableOnOffLabels]="true"
+                  mode="ios"
+                ></ion-toggle>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row style="margin-bottom: -16%;">
+      <ion-col size="4 ">
+        <div class="box3">
+          <ion-grid style="padding: 13px">
+            <ion-row>
+              <ion-col><ion-icon name="options"></ion-icon></ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col><ion-label>Kontrol</ion-label></ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col><ion-label>Merkezi</ion-label></ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-col>
+
+      <ion-col size="4">
+        <div class="box2">
+          <ion-grid>
+            <ion-row>
+              <ion-icon
+                class="aa"
+                style="
+                  font-size: xx-large;
+                  color: gray;
+                  padding: 12px;
+                  padding-bottom: 0px;
+                "
+                name="bulb"
+              ></ion-icon
+            ></ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-label
+                  style="padding: 0px 0px 13px 13px; font-family: sans-serif"
+                  >Air Lamp</ion-label
+                >
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col >
+                <ion-toggle
+                  (ionChange)="bak($event)"
+                  [enableOnOffLabels]="true"
+                  mode="ios"
+                ></ion-toggle>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-col>
+
+      <ion-col size="4">
+        <div class="box2">
+          <ion-grid>
+            <ion-row>
+              <ion-icon
+                class="aa"
+                style="
+                  font-size: xx-large;
+                  color: gray;
+                  padding: 12px;
+                  padding-bottom: 0px;
+                "
+                name="bulb"
+              ></ion-icon
+            ></ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-label
+                  style="padding: 0px 0px 13px 13px; font-family: sans-serif"
+                  >Air Lamp</ion-label
+                >
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-toggle
+                  (ionChange)="bak($event)"
+                  [enableOnOffLabels]="true"
+                  mode="ios"
+                ></ion-toggle>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+
+
+
+</ion-content>
+
+
+  <ion-tab-bar color="danger" slot="bottom">
+    <ion-tab-button selected="true">
+      <ion-icon name="home"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="library"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="person"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
